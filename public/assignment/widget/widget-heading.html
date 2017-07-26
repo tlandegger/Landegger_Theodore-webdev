@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="user-scalable=no">
+    <title>Login</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../css/stylesGrey.css" rel="stylesheet"/>
+</head>
+<body>
+
+<div class="jga jga-profile">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="row container-fluid">
+            <div class="col-sm-4 hidden-xs">
+                <div class="navbar-text pull-left">
+                    <a href="widget-list.html">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                    </a>
+                </div>
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">
+                        Widget Edit
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <div class="navbar-text pull-right">
+                    <a href="widget-list.html">
+                        <span class="glyphicon glyphicon-ok"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <div class="container-fluid">
+
+        <label for="name">Name</label>
+        <input name="name"
+               placeholder="Name"
+               class="form-control"
+               type="text"
+               id="name"/>
+
+        <label for="text">Text</label>
+        <input name="text"
+               placeholder="Text"
+               type="text"
+               class="form-control"
+               id="text"/>
+
+        <label for="size">Size</label>
+        <input name="size"
+               placeholder="Size"
+               type="number"
+               class="form-control"
+               id="size"/>
+
+        <a class="btn btn-default btn-danger btn-block"
+           href="widget-list.html"
+           role="button">Delete</a>
+    </div>
+
+    <nav class="navbar navbar-default navbar-fixed-bottom">
+        <div class="col-sm-4 hidden-xs">
+        </div>
+        <div class="row container-fluid">
+            <div class="col-sm-8">
+                <div class="navbar-text pull-right">
+                    <a href="../users/profile.html">
+                        <span class="glyphicon glyphicon-user"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+</div>
+</body>
+</html>
