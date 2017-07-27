@@ -1,28 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" name="viewport" content="user-scalable=no">
-    <title>Login</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="../vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="../css/styles.css" rel="stylesheet"/>
-</head>
-<body>
-
 <div class="jga jga-profile">
 
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="row container-fluid">
             <div class="col-sm-4 hidden-xs">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="#">
+                    <a class="navbar-brand">
                         Profile
                     </a>
                 </div>
             </div>
             <div class="col-sm-8">
                 <div class="navbar-text pull-right">
-                    <a href="profile.html">
+                    <a ng-click="model.updateUser(model.user)">
                         <span class="glyphicon glyphicon-ok"></span>
                     </a>
                 </div>
@@ -35,17 +24,19 @@
 
         <label for="firstName">First Name</label>
         <input name="firstName"
-               placeholder="First Name"
+               placeholder="Alice"
                class="form-control"
                type="text"
-               id="firstName"/>
+               id="firstName"
+               ng-model="model.user.firstname"/>
 
         <label for="lastName">Last Name</label>
         <input name="lastName"
                placeholder="Last Name"
                class="form-control"
                type="text"
-               id="lastName"/>
+               id="lastName"
+               ng-model="model.user.lastName"/>
 
         <label for="username">Username</label>
         <input name="username"
@@ -62,14 +53,15 @@
                placeholder="email@email.com"
                class="form-control"
                type="email"
-               id="email"/>
+               id="email"
+               ng-model="model.user.email"/>
 
         <a class="btn btn-default btn-primary btn-block"
-           href="../website/website-list.html"
+           href="#!/user/{{model.user._id}}/website"
            role="button">Websites</a>
 
         <a class="btn btn-default btn-danger btn-block"
-           href="login.html"
+           href="login.view.client.html"
            role="button">Logout</a>
     </div>
 
@@ -79,7 +71,7 @@
         <div class="row container-fluid">
             <div class="col-sm-8">
                 <div class="navbar-text pull-right">
-                    <a href="profile.html">
+                    <a href="#!/profile/{{model.user._id}}">
                         <span class="glyphicon glyphicon-user"></span>
                     </a>
                 </div>
@@ -88,5 +80,3 @@
     </nav>
 
 </div>
-</body>
-</html>

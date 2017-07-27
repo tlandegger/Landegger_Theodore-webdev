@@ -1,32 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" name="viewport" content="user-scalable=no">
-    <title>Login</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="../vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="../css/stylesGrey.css" rel="stylesheet"/>
-</head>
-<body>
-
 <div class="jga jga-profile">
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="row container-fluid">
             <div class="col-sm-4 hidden-xs">
                 <div class="navbar-text pull-left">
-                    <a href="widget-list.html">
+                    <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page">
                         <span class="glyphicon glyphicon-chevron-left"></span>
                     </a>
                 </div>
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="#">
-                        Widget Edit
+                    <a class="navbar-brand" href="">
+                        Edit {{model.page.name}}
                     </a>
                 </div>
             </div>
             <div class="col-sm-8">
                 <div class="navbar-text pull-right">
-                    <a href="widget-list.html">
+                    <a ng-click="model.updatePage(model.page)">
                         <span class="glyphicon glyphicon-ok"></span>
                     </a>
                 </div>
@@ -43,24 +32,20 @@
                placeholder="Name"
                class="form-control"
                type="text"
-               id="name"/>
+               id="name"
+               ng-model="model.page.name"/>
 
-        <label for="text">Text</label>
-        <input name="text"
-               placeholder="Text"
+        <label for="description">Description</label>
+        <input name="description"
+               placeholder="Description"
                type="text"
                class="form-control"
-               id="text"/>
+               id="description"
+               ng-model="model.page.description"/>
 
-        <label for="size">Size</label>
-        <input name="size"
-               placeholder="Size"
-               type="number"
-               class="form-control"
-               id="size"/>
 
         <a class="btn btn-default btn-danger btn-block"
-           href="widget-list.html"
+           ng-click="model.deletePage(model.pageId)"
            role="button">Delete</a>
     </div>
 
@@ -70,7 +55,7 @@
         <div class="row container-fluid">
             <div class="col-sm-8">
                 <div class="navbar-text pull-right">
-                    <a href="../users/profile.html">
+                    <a href="#!/profile/{{model.userId}}">
                         <span class="glyphicon glyphicon-user"></span>
                     </a>
                 </div>
@@ -79,5 +64,3 @@
     </nav>
 
 </div>
-</body>
-</html>
