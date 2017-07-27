@@ -1,32 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" name="viewport" content="user-scalable=no">
-    <title>Login</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="../vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="../css/stylesGrey.css" rel="stylesheet"/>
-</head>
-<body>
-
 <div class="jga jga-profile">
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="row container-fluid">
             <div class="col-sm-4 hidden-xs">
                 <div class="navbar-text pull-left">
-                    <a href="page-list.html">
+                    <a href="widget-list.view.client.html">
                         <span class="glyphicon glyphicon-chevron-left"></span>
                     </a>
                 </div>
                 <div class="navbar-header">
                     <a class="navbar-brand" href="#">
-                        New Page
+                        Widget Edit
                     </a>
                 </div>
             </div>
             <div class="col-sm-8">
                 <div class="navbar-text pull-right">
-                    <a href="page-list.html">
+                    <a href="widget-list.view.client.html">
                         <span class="glyphicon glyphicon-ok"></span>
                     </a>
                 </div>
@@ -40,18 +29,36 @@
 
         <label for="name">Name</label>
         <input name="name"
-               placeholder="Page Name"
-               type="text"
+               placeholder="Name"
                class="form-control"
+               type="text"
                id="name"/>
 
-        <label for="title">Title</label>
-        <input name="title"
-               placeholder="Page Title"
+        <label for="text">Text</label>
+        <input name="text"
+               placeholder="Text"
                type="text"
                class="form-control"
-               id="title"/>
+               id="text"/>
 
+        <label for="url">URL</label>
+        <input name="url"
+               placeholder="youtube.com"
+               type="text"
+               class="form-control"
+               id="url"/>
+
+        <label for="width">Width</label>
+        <input name="width"
+               placeholder="100%"
+               type="number"
+               class="form-control"
+               id="width"/>
+
+
+        <a class="btn btn-default btn-danger btn-block"
+           href="widget-list.view.client.html"
+           role="button">Delete</a>
     </div>
 
     <nav class="navbar navbar-default navbar-fixed-bottom">
@@ -60,7 +67,7 @@
         <div class="row container-fluid">
             <div class="col-sm-8">
                 <div class="navbar-text pull-right">
-                    <a href="../users/profile.html">
+                    <a href="../../user/templates/profile.view.client.html">
                         <span class="glyphicon glyphicon-user"></span>
                     </a>
                 </div>
@@ -69,5 +76,3 @@
     </nav>
 
 </div>
-</body>
-</html>
