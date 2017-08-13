@@ -3,7 +3,7 @@
         .module("WebAppMaker")
         .controller("LoginController", LoginController)
 
-    function LoginController($location, userService) {
+    function LoginController($location, userService, $rootScope) {
         var model = this;
 
         model.login = login;
@@ -18,13 +18,17 @@
                 model.errorMessage = "User not found";
                 return;
             }
-            user = userService.findUserByCredentials(user.username, user.password);
-            if (!user) {
-                model.errorMessage = "User not found";
-            } else {
-                $location.url("profile/" + user._id);
-            }
+            var promise = userService.findUserByCredentials(user.username, user.password);
+            promise
+                .then(function (response) {
+                    user = response.data;
+                    if (user === null) {
+                        model.errorMessage = "User not found";
+                    } else {
+                        $rootScope.currentUser = user;
+                        $location.url("profile/" + user._id);
+                    }
+                });
         }
-
     }
 })();
