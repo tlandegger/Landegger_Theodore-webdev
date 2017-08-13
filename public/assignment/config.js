@@ -2,7 +2,7 @@
     angular
         .module("WebAppMaker")
         .config(Config);
-    function Config($routeProvider) {
+    function Config($routeProvider, $httpProvider) {
         $routeProvider
             .when("/login", {
                 templateUrl: "views/user/templates/login.view.client.html",

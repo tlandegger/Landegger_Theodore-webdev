@@ -3,7 +3,7 @@
         .module("WebAppMaker")
         .factory("pageService", pageService);
 
-    function pageService() {
+    function pageService($http) {
         var pages = [
             { "_id": "321", "name": "Post 1", "websiteId": "456", "description": "Lorem" },
             { "_id": "432", "name": "Post 2", "websiteId": "456", "description": "Lorem" },
@@ -22,55 +22,36 @@
 
         // adds a page to the pages array
         function createPage(websiteId, page) {
-            page._id = (new Date()).getTime() + "";
-            page.websiteId = websiteId;
-            pages.push(page);
-            return page;
+            var url = "/api/website/" + websiteId +"websiteId/page";
+            return $http.post(url, page);
         }
 
         // Searches for page, returns null if not found
         function findPagesByWebsiteId(websiteId) {
-            var ps = [];
-            for (var p in pages) {
-                if (pages[p].websiteId === websiteId) {
-                    ps.push(pages[p]);
-                }
-            }
-            return ps;
+            var url = "/api/website/" + websiteId +"websiteId/page";
+            return $http.get(url).
+                then(function (response) {
+                    return response.data;
+            });
         }
 
         // Searches for page, returns null if not found
         function findPageById(pageId) {
-            for (var p in pages) {
-                if (pages[p]._id === pageId) {
-                    return pages[p];
-                }
-            }
-            return null;
+            var url = "/api/page/" + pageId;
+            return $http.get(url);
         }
 
 
         // updates userId to new user
         function updatePage(pageId, page) {
-            for (var p in pages) {
-                if (pages[p]._id === pageId) {
-                    pages[p] = page;
-                    return;
-                }
-            }
-            return null;
+            var url = "/api/page/" + pageId;
+            return $http.put(url, page);
         }
 
         // Deletes user
         function deletePage(pageId) {
-            for (var p in pages) {
-                if (pages[p]._id === pageId) {
-                    var tempPage = pages[p];
-                    pages.splice(p, 1);
-                    return tempPage;
-                }
-            }
-            return null;
+            var url = "/api/page/" + pageId;
+            return $http.delete(url);
         }
     }
 

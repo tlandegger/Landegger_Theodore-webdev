@@ -10,7 +10,10 @@
         model.websiteId = $routeParams.wid;
 
         function init() {
-            model.pages = pageService.findPagesByWebsiteId(model.websiteId);
+            pageService.findPagesByWebsiteId(model.websiteId)
+                .then(function(pages) {
+                model.pages = pages;
+            });;
         }
         init();
 

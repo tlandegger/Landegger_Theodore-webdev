@@ -14,7 +14,10 @@
         model.pageId = $routeParams.pid;
 
         function init() {
-            model.page = pageService.findPageById(model.pageId);
+            model.page = pageService.findPageById(model.pageId)
+                .then(function (page) {
+                    model.page = page.data;
+                });
         }
         init();
 
