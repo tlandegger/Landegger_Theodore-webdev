@@ -22,13 +22,13 @@
 
         // adds a page to the pages array
         function createPage(websiteId, page) {
-            var url = "/api/website/" + websiteId +"websiteId/page";
+            var url = "/api/website/" + websiteId +"/page";
             return $http.post(url, page);
         }
 
         // Searches for page, returns null if not found
         function findPagesByWebsiteId(websiteId) {
-            var url = "/api/website/" + websiteId +"websiteId/page";
+            var url = "/api/website/" + websiteId +"/page";
             return $http.get(url).
                 then(function (response) {
                     return response.data;
