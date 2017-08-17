@@ -1,3 +1,2 @@
-/**
- * Created by Theo on 8/17/2017.
- */
+var app = require("../../express.js");
+var tournamentModel = require('../model/tournament/tournament.model.server');

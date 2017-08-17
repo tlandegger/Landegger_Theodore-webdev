@@ -1,3 +1,2 @@
-/**
- * Created by Theo on 8/17/2017.
- */
+var app = require("../../express.js");
+var usersModel = require('../model/users/users.model.server');
