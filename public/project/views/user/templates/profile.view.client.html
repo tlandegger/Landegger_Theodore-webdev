@@ -1,0 +1,82 @@
+<div class="jga jga-profile">
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="row container-fluid">
+            <div class="col-sm-4 hidden-xs">
+                <div class="navbar-header">
+                    <a class="navbar-brand">
+                        Profile
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <div class="navbar-text pull-right">
+                    <a ng-click="model.updateUser(model.user)">
+                        <span class="glyphicon glyphicon-ok"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container-fluid">
+
+        <label for="firstName">First Name</label>
+        <input name="firstName"
+               placeholder="Alice"
+               class="form-control"
+               type="text"
+               id="firstName"
+               ng-model="model.user.firstname"/>
+
+        <label for="lastName">Last Name</label>
+        <input name="lastName"
+               placeholder="Last Name"
+               class="form-control"
+               type="text"
+               id="lastName"
+               ng-model="model.user.lastName"/>
+
+        <label for="username">Username</label>
+        <input name="username"
+               readonly
+               value="alice"
+               placeholder="Username"
+               class="form-control"
+               type="text"
+               id="username"/>
+
+        <label for="email">Email</label>
+        <input name="email"
+               type="email"
+               placeholder="email@email.com"
+               class="form-control"
+               type="email"
+               id="email"
+               ng-model="model.user.email"/>
+
+        <a class="btn btn-default btn-primary btn-block"
+           href="#!/user/{{model.user._id}}/tournament"
+           role="button">Tournaments</a>
+
+        <a class="btn btn-default btn-danger btn-block"
+           href="#!/login"
+           role="button">Logout</a>
+    </div>
+
+    <nav class="navbar navbar-default navbar-fixed-bottom">
+        <div class="col-sm-4 hidden-xs">
+        </div>
+        <div class="row container-fluid">
+            <div class="col-sm-8">
+                <div class="navbar-text pull-right">
+                    <a href="#!/profile/{{model.user._id}}">
+                        <span class="glyphicon glyphicon-user"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+</div>

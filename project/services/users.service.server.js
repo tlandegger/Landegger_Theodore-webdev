@@ -1,5 +1,5 @@
 var app = require("../../express");
-var userModel = require("../model/user/user.model.server");
+var userModel = require("../model/users/users.model.server");
 
 var users = [
     {_id: "123", username: "alice",    password: "alice",    firstName: "Alice",  lastName: "Wonder", isAdmin: true  },
@@ -9,12 +9,12 @@ var users = [
 ];
 
 // http handlers
-/*app.get("/api/users", getAllUsers) */;
-app.get("/api/user/:userId", getUserById);
-app.get("/api/user", findUser);
-app.post("/api/user", registerUser);
-app.put("/api/user/:userId", updateUser);
-app.delete("/api/user/:userId", deleteUser);
+app.get("/api/userss", getAllUsers);
+app.get("/api/users/:userId", getUserById);
+app.get("/api/users", findUser);
+app.post("/api/users", registerUser);
+app.put("/api/users/:userId", updateUser);
+app.delete("/api/users/:userId", deleteUser);
 
 
 function updateUser(req, res) {

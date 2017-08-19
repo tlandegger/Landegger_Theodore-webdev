@@ -1,0 +1,70 @@
+<div class="jga jga-profile">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="row container-fluid">
+            <div class="col-sm-4 hidden-xs">
+                <div class="navbar-text pull-left">
+                    <a href="#!/user/{{model.userId}}/tournament/">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                    </a>
+                </div>
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="">
+                        New Tournament
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <div class="navbar-text pull-right">
+                    <a ng-click="model.createTournament(model.tournament)">
+                        <span class="glyphicon glyphicon-ok"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <div class="container-fluid">
+
+        <label for="name">Challonge ID</label>
+        <input name="name"
+               placeholder="Name"
+               class="form-control"
+               type="text"
+               id="name"
+               ng-model="model.tournament.name"/>
+
+        <label for="description">Tag</label>
+        <input name="description"
+               placeholder="Description"
+               type="text"
+               class="form-control"
+               id="description"
+               ng-model="model.tournament.tag"/>
+
+        <a class="btn btn-default btn-primary btn-block"
+           ng-click="model.createTournament(model.tournament)"
+           role="button">Create Tournament</a>
+
+        <a class="btn btn-default btn-danger btn-block"
+           href="#!/user/{{model.userId}}/tournament/"
+           role="button">Cancel</a>
+
+    </div>
+
+    <nav class="navbar navbar-default navbar-fixed-bottom">
+        <div class="col-sm-4 hidden-xs">
+        </div>
+        <div class="row container-fluid">
+            <div class="col-sm-8">
+                <div class="navbar-text pull-right">
+                    <a href="#!/profile/{{model.userId}}">
+                        <span class="glyphicon glyphicon-user"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+</div>
