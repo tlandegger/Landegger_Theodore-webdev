@@ -18,51 +18,31 @@
                 templateUrl: "views/user/templates/profile.view.client.html",
                 controller: "ProfileController",
                 controllerAs: "model"
-            }) /*
-            .when("/user/:uid/website", {
-                templateUrl: "views/website/templates/website-list.view.client.html",
-                controller: "websiteListController",
+            }) 
+            .when("/user/:uid/tournament", {
+                templateUrl: "views/tournament/templates/tournament-list.view.client.html",
+                controller: "tournamentListController",
                 controllerAs: "model"
             })
-            .when("/user/:uid/website/new", {
-                templateUrl: "views/website/templates/website-new.view.client.html",
-                controller: "websiteNewController",
+            .when("/user/:uid/tournament/new", {
+                templateUrl: "views/tournament/templates/tournament-new.view.client.html",
+                controller: "tournamentNewController",
                 controllerAs: "model"
             })
-            .when("/user/:uid/website/:wid", {
-                templateUrl: "views/website/templates/website-edit.view.client.html",
-                controller: "websiteEditController",
+            .when("/user/:uid/tournament/:tid", {
+                templateUrl: "views/tournament/templates/tournament-edit.view.client.html",
+                controller: "tournamentEditController",
                 controllerAs: "model"
             })
-            .when("/user/:uid/website/:wid/page", {
-                templateUrl: "views/page/templates/page-list.view.client.html",
-                controller: "pageListController",
+            .when("/user/:uid/tournament/:tid/match", {
+                templateUrl: "views/match/templates/match-list.view.client.html",
+                controller: "matchListController",
                 controllerAs: "model"
             })
-            .when("/user/:uid/website/:wid/page/new", {
-                templateUrl: "views/page/templates/page-new.view.client.html",
-                controller: "pageNewController",
+            .when("/user/:uid/tournament/:tid/match/:mid", {
+                templateUrl: "views/match/templates/match-edit.view.client.html",
+                controller: "matchEditController",
                 controllerAs: "model"
             })
-            .when("/user/:uid/website/:wid/page/:pid", {
-                templateUrl: "views/page/templates/page-edit.view.client.html",
-                controller: "pageEditController",
-                controllerAs: "model"
-            })
-            .when("/user/:uid/website/:wid/page/:pid/widget", {
-                templateUrl: "views/widget/templates/widget-list.view.client.html",
-                controller: "widgetListController",
-                controllerAs: "model"
-            })
-            .when("/user/:uid/website/:wid/page/:pid/widget/new", {
-                templateUrl: "views/widget/templates/widget-new.view.client.html",
-                controller: "widgetEditController",
-                controllerAs: "model"
-            })
-            .when("/user/:uid/website/:wid/page/:pid/widget/wgid", {
-                templateUrl: "views/widget/templates/widget-edit.view.client.html",
-                controller: "widgetEditController",
-                controllerAs: "model"
-            }) */
     }
 })();

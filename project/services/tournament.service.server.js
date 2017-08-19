@@ -19,7 +19,7 @@ function createTournament(req, res) {
     tournamentModel.createTournamentForUser(userId, tournament)
         .then(function (tournamentDoc) {
             for (var m in matches) {
-                matchModel.createMatchForTournament(tournamentDoc._id, m);
+                matchModel.createMatchForTournament(tournamentDoc._id, matches[m]);
             }
             res.json(tournamentDoc);
         }, function (err) {

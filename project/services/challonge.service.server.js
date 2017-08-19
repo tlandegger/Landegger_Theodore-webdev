@@ -4,7 +4,7 @@ var apiKey = 'x2S2RebBbkRLFRun7SvpdmgoulBp6VbUpkjy8MBc';
 var frontUrl = "https://api.challonge.com/v1/tournaments/"
 var endUrl = ".json?api_key=" + apiKey
 
-module.exports = getMatches;
+module.exports = {getMatches: getMatches};
 
 function getMatches(bracketId, tag) {
     var participantsUrl = frontUrl + bracketId + "/participants" + endUrl;
@@ -49,5 +49,5 @@ function nameMatches(tags, matches) {
     return cleanMatches;
 }
 
-getMatches("mmom-d22singles3", "Mr. Tuesday");
+console.log(getMatches("aliceAdmin", "Alice"));
 

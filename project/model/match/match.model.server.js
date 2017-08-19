@@ -18,7 +18,8 @@ function createMatchForTournament(tournamentId, match) {
         .create(match)
         .then(function (matchDoc) {
             matchTmp = matchDoc;
-            return tournamentModel.addMatch(userId, matchDoc._id);
+            tournamentModel.addMatch(tournamentId, matchDoc._id);
+            return matchTmp;
         })
         .then(function (tournamentDoc) {
             return tournamentDoc;

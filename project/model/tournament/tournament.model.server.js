@@ -9,18 +9,21 @@ tournamentModel.updateTournament = updateTournament;
 tournamentModel.deleteTournament = deleteTournament;
 tournamentModel.findAllTournamentsForUser = findAllTournamentsForUser;
 tournamentModel.findTournamentById = findTournamentById;
+tournamentModel.addMatch = addMatch;
+tournamentModel.removeMatch = removeMatch;
 
 
 module.exports = tournamentModel;
 
 function createTournamentForUser(userId, tournament) {
-    tournament._userId = userId;
+    tournament._user = userId;
     var tournamentTmp = null;
     return tournamentModel
-        .create(match)
+        .create(tournament)
         .then(function (tournamentDoc) {
             matchTmp = tournamentDoc;
-            return usersModel.addTournament(userId, tournamentDoc._id);
+            usersModel.addTournament(userId, tournamentDoc._id);
+            return matchTmp;
         })
         .then(function (userDoc) {
             return userDoc;
@@ -33,7 +36,7 @@ function updateTournament(tournamentId, tournament) {
 }
 
 function deleteTournament(tournamentId) {
-    return tournamentModel.delete(tournamentId)
+    return tournamentModel.remove(tournamentId)
         .then(function (status) {
             return usersModel.removeTournament(userId, tournamentId)
     });
@@ -49,4 +52,24 @@ function findAllTournamentsForUser(userId) {
 
 function findTournamentById(tournamentId) {
     return tournamentModel.findById(tournamentId);
+}
+
+function removeMatch(tournamentId, matchId) {
+    return tournamentModel
+        .findById(tournamentId)
+        .then(function (tournament) {
+            var index = tournament.matches.indexOf(matchId);
+            tournament.matches.splice(index, 1);
+            return tournament.save();
+        })
+}
+
+function addMatch(tournamentId, matchId) {
+    var t = tournamentModel.findById(tournamentId);
+    return tournamentModel
+        .findById(tournamentId)
+        .then(function (tournament) {
+            tournament.matches.push(matchId);
+            return tournament.save();
+        });
 }
