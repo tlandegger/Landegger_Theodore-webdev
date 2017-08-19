@@ -3,7 +3,7 @@
         <div class="row container-fluid">
             <div class="col-sm-4 hidden-xs">
                 <div class="navbar-text pull-left">
-                    <a href="#!/user/{{model.userId}}/">
+                    <a href="#!/profile/{{model.userId}}/">
                         <span class="glyphicon glyphicon-chevron-left"></span>
                     </a>
                 </div>
@@ -32,7 +32,7 @@
             <li ng-repeat="tournament in model.tournaments" class="list-group-item">
                 <div class="row">
                     <div class="col-xs-4">
-                        <a href="#!/user/{{model.userId}}/tournament/{{model.tournamentId}}/match">
+                        <a href="#!/user/{{model.userId}}/tournament/{{tournament._id}}/match">
                             {{tournament.name}}
                         </a>
                     </div>
