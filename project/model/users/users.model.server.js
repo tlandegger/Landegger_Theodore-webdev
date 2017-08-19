@@ -57,7 +57,7 @@ function findUserByCredentials(username, password) {
 }
 
 function updateUser(userId, user) {
-    return usersModels.update({_id: userId},
+    return usersModel.update({_id: userId},
         {$set: user});
 }
 
