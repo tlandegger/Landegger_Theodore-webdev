@@ -12,8 +12,9 @@ app.delete("/api/tournament/:tournamentId", deleteTournament);
 function createTournament(req, res) {
 
     var userId = req.params.userId;
-    var bracketId = req.params.bracketId;
-    var tag = req.params.tag;
+    var tournament = req.body;
+    var bracketId = tournament.name;
+    var tag = tournament.tag;
     var matches = challonge.getMatches(bracketId, tag);
     tournamentModel.createTournamentForUser(userId, tournament)
         .then(function (tournamentDoc) {
