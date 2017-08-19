@@ -7,6 +7,9 @@ var tournamentModel = require("../tournament/tournament.model.server");
 matchModel.createMatchForTournament = createMatchForTournament;
 matchModel.updateMatch = updateMatch;
 matchModel.deleteMatch = deleteMatch;
+matchModel.findMatchById = findMatchById;
+matchModel.findAllMatchesForTournament = findAllMatchesForTournament;
+
 
 
 module.exports = matchModel;
@@ -33,4 +36,15 @@ function updateMatch(matchId, match) {
 
 function deleteMatch(matchId) {
     return matchModel.delete(matchId);
+}
+
+function findMatchById(matchId) {
+    return matchModel.findById(matchId);
+}
+
+function findAllMatchesForTournament(tournamentId) {
+    return matchModel
+        .find({_tournament: tournamentId})
+        .populate('_tournament', 'name')
+        .exec();
 }
