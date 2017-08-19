@@ -22,21 +22,21 @@
 
     <div class="container-fluid">
 
-        <label for="firstName">First Name</label>
-        <input name="firstName"
-               placeholder="Alice"
+        <label for="name">Name</label>
+        <input name="name"
+               placeholder="name"
                class="form-control"
                type="text"
-               id="firstName"
-               ng-model="model.user.firstname"/>
+               id="name"
+               ng-model="model.user.name"/>
 
-        <label for="lastName">Last Name</label>
-        <input name="lastName"
-               placeholder="Last Name"
+        <label for="tag">Tag</label>
+        <input name="tag"
+               placeholder="tag"
                class="form-control"
                type="text"
-               id="lastName"
-               ng-model="model.user.lastName"/>
+               id="tag"
+               ng-model="model.user.tag"/>
 
         <label for="username">Username</label>
         <input name="username"
@@ -45,7 +45,8 @@
                placeholder="Username"
                class="form-control"
                type="text"
-               id="username"/>
+               id="username"
+               ng-model="model.user.username"/>
 
         <label for="email">Email</label>
         <input name="email"
