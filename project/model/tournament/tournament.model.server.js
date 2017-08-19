@@ -7,6 +7,8 @@ var usersModel = require("../users/users.model.server");
 tournamentModel.createTournamentForUser = createTournamentForUser;
 tournamentModel.updateTournament = updateTournament;
 tournamentModel.deleteTournament = deleteTournament;
+tournamentModel.findAllTournamentsForUser = findAllTournamentsForUser;
+tournamentModel.findTournamentById = findTournamentById;
 
 
 module.exports = tournamentModel;
@@ -31,5 +33,20 @@ function updateTournament(tournamentId, tournament) {
 }
 
 function deleteTournament(tournamentId) {
-    return tournamentModel.delete(tournamentId);
+    return tournamentModel.delete(tournamentId)
+        .then(function (status) {
+            return usersModel.removeTournament(userId, tournamentId)
+    });
+}
+
+
+function findAllTournamentsForUser(userId) {
+    return tournamentModel
+        .find({_user: userId})
+        .populate('_user', 'username')
+        .exec();
+}
+
+function findTournamentById(tournamentId) {
+    return tournamentModel.findById(tournamentId);
 }

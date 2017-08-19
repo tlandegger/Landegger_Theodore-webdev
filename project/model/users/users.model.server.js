@@ -15,7 +15,7 @@ usersModel.unFollow = unFollow;
 
 module.exports = usersModel;
 function removeTournament(userId, tournamentId) {
-    return usersModels
+    return usersModel
         .findById(userId)
         .then(function (user) {
             var index = user.tournaments.indexOf(tournamentId);
@@ -25,7 +25,7 @@ function removeTournament(userId, tournamentId) {
 }
 
 function addTournament(userId, tournamentId) {
-    return usersModels
+    return usersModel
         .findById(userId)
         .then(function (user) {
             user.tournaments.push(tournamentId);
@@ -34,7 +34,7 @@ function addTournament(userId, tournamentId) {
 }
 
 function unFollow(userId, followId) {
-    return usersModels
+    return usersModel
         .findById(userId)
         .then(function (user) {
             var index = user.following.indexOf(followId);
@@ -44,7 +44,7 @@ function unFollow(userId, followId) {
 }
 
 function follow(userId, followId) {
-    return usersModels
+    return usersModel
         .findById(userId)
         .then(function (user) {
             user.following.push(followId);
@@ -53,7 +53,7 @@ function follow(userId, followId) {
 }
 
 function findUserByCredentials(username, password) {
-    return usersModels.findOne({username: username, password: password});
+    return usersModel.findOne({username: username, password: password});
 }
 
 function updateUser(userId, user) {
@@ -62,13 +62,13 @@ function updateUser(userId, user) {
 }
 
 function createUser(user) {
-    return usersModels.create(user);
+    return usersModel.create(user);
 }
 
 function findUserById(userId) {
-    return usersModels.findById(userId);
+    return usersModel.findById(userId);
 }
 
 function deleteUser(userId) {
-    return usersModels.delete(userId);
+    return usersModel.delete(userId);
 }
