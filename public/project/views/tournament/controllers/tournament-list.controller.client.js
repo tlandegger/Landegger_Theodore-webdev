@@ -14,11 +14,11 @@
                     model.tournaments = tournaments;
                 });
             userService.findUserById(model.userId)
-                .then(function(user) {
-                    model.user = user;
+                .then(function (response) {
+                    model.user = response.data;
                 })
         }
         init();
-
+        
     }
 })();
